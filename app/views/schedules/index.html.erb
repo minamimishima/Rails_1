@@ -1,0 +1,47 @@
+<% if flash[:notice] %>
+  <p class = "notice"><%= flash[:notice] %></p>
+<% end %>
+
+<p><%= link_to "新規登録", "/schedules/new" %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>終日</th>
+      <th>更新日時</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedules.each do |schedule| %>
+      <tr>
+        <td><%= schedule.id %></td>
+        <td><%= schedule.title %></td>
+        <td><%= l schedule.start_date %></td>
+        <td><%= l schedule.end_date %></td>
+        <td>
+          <% if schedule.all_day == true %>
+            ○
+          <% end %>
+        </td>
+        <td><%= l schedule.updated_at %></td>
+        <td>
+          <%= link_to "詳細", schedule %>
+        </td>
+        <td>
+          <%= link_to "編集", "/schedules/#{schedule.id}/edit" %>
+        </td>
+        <td>
+          <%= link_to "削除", schedule, method: :delete, data:{ confirm:"本当に削除しますか？" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>予定合計：<%= @schedules_count %></p>
+<p>今日の日付：<%= l @today %></p>
