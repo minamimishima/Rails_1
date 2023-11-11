@@ -6,7 +6,7 @@
 
   <div class="button-wrapper">
     <p>予定一覧</p>
-    <%= button_to "新規登録", "/schedules/new", method: :get, class:"button" %>
+    <%= button_to "新規登録", :new_schedule, method: :get, class:"button" %>
   </div>
 
   <table class="index-table">
@@ -37,7 +37,7 @@
           <td><%= l schedule.updated_at %></td>
           <td>
             <%= link_to "詳細", schedule, class:"link" %>
-            <%= link_to "編集", "/schedules/#{schedule.id}/edit", class:"link" %>
+            <%= link_to "編集", [:edit, schedule], class:"link" %>
             <%= link_to "削除", schedule, class:"link", method: :delete, data:{ confirm:"本当に削除しますか？" } %>
           </td>
         </tr>

@@ -31,8 +31,8 @@
 
   <div class="link">
     <ul>
-      <li><%= link_to "編集", "/schedules/#{@schedule.id}/edit", class:"link" %></li>
-      <li><%= link_to "一覧に戻る", "/schedules", class:"link" %></li>
+      <li><%= link_to "編集", [:edit,@schedule], class:"link" %></li>
+      <li><%= link_to "一覧に戻る", :schedules, class:"link" %></li>
     </ul>
   </div>
 
