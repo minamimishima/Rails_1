@@ -32,6 +32,10 @@ header p {
   box-sizing: border-box;
 }
 
+h2 {
+  text-align: center;
+}
+
 .button-wrapper {
   display: flex;
   justify-content: space-between;
@@ -41,24 +45,6 @@ header p {
 
 .button-wrapper p {
   font-weight: 700;
-}
-
-.button {
-  border: 0px;
-  background-color: #AEC4E5;
-  border-radius: 30px;
-  padding: 5px 15px;
-  font-size:16px
-}
-
-.index-table {
-  width: 1000px;
-  text-align: center;
-}
-
-.index-table thead {
-  background-color: #AEC4E5;
-  text-align: center;
 }
 
 .link {
@@ -87,12 +73,18 @@ header p {
   margin: 30px auto;
 }
 
-.show-container {
-  max-width: 75%;
+.show-table {
+  table-layout: fixed;
+  width: fit-content;
+  max-width: 600px;
+  word-wrap: break-word;
 }
 
+.show-table th {
+  text-align: center;
+}
 
-ul {
+ul{
   list-style: none;
-  padding: 10px;
+  padding: 0;
 }
