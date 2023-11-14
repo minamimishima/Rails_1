@@ -1,0 +1,41 @@
+<%= render "shared/error", obj: @schedule %>
+
+<div class="edit-container">
+
+  <h2>予定編集</h2>
+
+  <%= form_with model: @schedule do |f| %>
+    <div class="row mb-3">
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :start_date, "開始日" %>
+      <%= f.date_select :start_date %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :end_date, "終了日" %>
+      <%= f.date_select :end_date %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :all_day, "終日" %>
+      <%= f.check_box :all_day %>
+    </div>
+
+    <div class="row mb-3">
+      <%= f.label :memo, "メモ" %>
+      <%= f.text_area :memo %>
+    </div>
+
+    <div class="link">
+      <ul>
+        <li><%= f.submit "編集完了" %></li>
+        <li><%= link_to "一覧に戻る", schedules_path, class:"link" %></li>
+      </ul>
+    </div>
+
+    <% end %>
+</div>

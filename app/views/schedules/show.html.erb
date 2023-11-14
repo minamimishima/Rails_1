@@ -1,0 +1,39 @@
+<div class ="show-container">
+
+  <h2>予定詳細</h2>
+
+  <table class="show-table table table-borderless">
+    <tr>
+      <th>タイトル</th>
+      <td><%= @schedule.title %></td>
+    </tr>
+    <tr>
+      <th>開始日</th>
+      <td><%= l @schedule.start_date %></td>
+    </tr>
+    <tr>
+      <th>終了日</th>
+      <td><%= l @schedule.end_date %></td>
+    </tr>
+    <tr>
+      <th>終日</th>
+      <td>
+        <% if @schedule.all_day == true %>
+        ○
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>メモ</th>
+      <td><%= @schedule.memo %></td>
+    </tr>
+  </table>
+
+  <div class="link">
+    <ul>
+      <li><%= link_to "編集", edit_schedule_path(@schedule), class:"link" %></li>
+      <li><%= link_to "一覧に戻る", schedules_path, class:"link" %></li>
+    </ul>
+  </div>
+
+</div>
